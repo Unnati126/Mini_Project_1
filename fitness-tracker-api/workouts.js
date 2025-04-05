@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 let workouts = [];
@@ -39,4 +39,4 @@ router.delete("/:id", (req, res) => {
     res.status(204).send();
 });
 
-module.exports = router;
+export default router;
