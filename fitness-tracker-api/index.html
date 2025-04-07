@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Fitness Tracker</h1>
+
+        <form id="workout-form">
+            <input type="text" id="exercise" placeholder="Exercise Name" required>
+            <input type="number" id="durartion" placeholder="Duration (min)"required>
+            <input type="number" id="calories" placeholder="Calories Burned" required>
+            <input type="date" id="date" required>
+            <button type="submit">Add Workout</button>
+        </form>
+        
+        <h2>Workout History</h2>
+        <ul id="workout-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
