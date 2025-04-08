@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/workouts"; // Backend API URL
+const API_URL = "http://localhost:5002/api/workouts"; // Backend API URL
 
 document.addEventListener("DOMContentLoaded", fetchWorkouts);
 

@@ -3,10 +3,14 @@ import cors from "cors";
 //require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5002;
+
+/*const workoutRoutes = require("./routes/workouts");
+app.use("/api/workouts", workoutRoutes);*/
+
 
 app.use(cors());
-app.use(json());
+app.use(express.json());
 
 app.use('/', express.static('public'));
 
@@ -22,6 +26,3 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: "Something went wrong!" });
 });
-
-
-
