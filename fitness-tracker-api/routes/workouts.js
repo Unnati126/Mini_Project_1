@@ -6,6 +6,7 @@ let idCounter = 1;
 
 // Create a new workout
 router.post("/", (req, res) => {
+    console.log("📥 Received workout:", req.body); 
   const { exercise, duration, caloriesBurned, date } = req.body;
   const newWorkout = {
     id: idCounter++,
@@ -15,6 +16,7 @@ router.post("/", (req, res) => {
     date
   };
   workouts.push(newWorkout);
+  console.log("✅ Workout saved:", newWorkout);
   res.status(201).json(newWorkout);
 });
 
