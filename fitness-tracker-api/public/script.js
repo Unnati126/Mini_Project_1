@@ -13,7 +13,7 @@ form.addEventListener("submit", async (e) => {
     const caloriesburned = document.getElementById("calories").value;
     const date = document.getElementById("date").value;
 
-    const newWorkout = { exercise, duration, caloriesburned: calories, date };
+    const newWorkout = { exercise, duration, caloriesBurned: caloriesburned, date };
 
     const response = await fetch(API_URL, {
         method: "POST",
@@ -22,8 +22,8 @@ form.addEventListener("submit", async (e) => {
     });
 
     if (response.ok) {
-        fetchWorkouts();  //refresh list
-        form.reset();  //clear form
+        fetchWorkouts();  // Refresh list
+        form.reset();     // Clear form
     }
 });
 

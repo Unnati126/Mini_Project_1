@@ -1,8 +1,8 @@
 {
   "name": "fitness-tracker-api",
   "version": "1.0.0",
-  "main": "workouts.js",
-  "type": "module",
+  "main": "server.js",
+  "type":  "module",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
