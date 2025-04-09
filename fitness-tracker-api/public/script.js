@@ -71,7 +71,7 @@ document.getElementById("total-calories").textContent = totalCalories;
         const li = document.createElement("li");
         li.innerHTML = `
             <span><strong>${workout.exercise}</strong> - ${workout.duration} min - ${workout.caloriesBurned} cal - ${workout.date}</span>
-            <button class="edit-btn" onclick="editWorkout(${workout.id})">Edit</button>
+            <button class="edit-btn" onclick="updateWorkout(${workout.id})">Update</button>
             <button class="delete-btn" onclick="deleteWorkout(${workout.id})">Delete</button>
         `;
         workoutList.appendChild(li);
@@ -79,7 +79,7 @@ document.getElementById("total-calories").textContent = totalCalories;
 }
 
 // Update an existing workout (PUT request)
-async function editWorkout(id) {
+async function updateWorkout(id) {
     const response = await fetch(`${API_URL}/${id}`);
     const workout = await response.json();
 
@@ -135,22 +135,9 @@ function renderWorkoutList(workouts) {
         const li = document.createElement("li");
         li.innerHTML = `
             <span><strong>${workout.exercise}</strong> - ${workout.duration} min - ${workout.caloriesBurned} cal - ${workout.date}</span>
-            <button class="edit-btn" onclick="editWorkout(${workout.id})">Edit</button>
+            <button class="edit-btn" onclick="updateWorkout(${workout.id})">Update</button>
             <button class="delete-btn" onclick="deleteWorkout(${workout.id})">Delete</button>
         `;
         workoutList.appendChild(li);
     });
 }
-
-/*function showNotification(message) {
-    const notify = document.getElementById("notification");
-    notify.textContent = message;
-    notify.classList.remove("hidden");
-
-    setTimeout(() => {
-        notify.classList.add("hidden");
-    }, 2000);
-}
-
-// Use it like this:
-showNotification("Workout added successfully!");*/
