@@ -4,16 +4,36 @@ document.addEventListener("DOMContentLoaded", fetchWorkouts);
 
 const form = document.getElementById("workout-form");
 
+const readWorkouts = () => {
+    try {
+      const data = fs.readFileSync(workoutsFilePath, "utf-8");
+      return JSON.parse(data);
+    } catch (err) {
+      console.error("❌ Error reading workouts.json:", err);
+      return [];
+    }
+  };
+  
+  const writeWorkouts = (data) => {
+    try {
+      fs.writeFileSync(workoutsFilePath, JSON.stringify(data, null, 2));
+      console.log("✅ Data saved to workouts.json");
+    } catch (err) {
+      console.error("❌ Error writing workouts.json:", err);
+    }
+  };
+  
+
 // Create workout (POST request)
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const exercise = document.getElementById("exercise").value;
     const duration = document.getElementById("duration").value;
-    const caloriesburned = document.getElementById("calories").value;
+    const caloriesBurned = document.getElementById("calories").value;
     const date = document.getElementById("date").value;
 
-    const newWorkout = { exercise, duration, caloriesBurned: caloriesburned, date };
+    const newWorkout = { exercise, duration, caloriesBurned, date };
 
     const response = await fetch(API_URL, {
         method: "POST",
