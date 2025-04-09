@@ -17,13 +17,23 @@
             <input type="number" id="duration" placeholder="Duration (min)"required>
             <input type="number" id="calories" placeholder="Calories Burned" required>
             <input type="date" id="date" required>
+            <input type="text" id="filter" placeholder="Search by exercise or date..." />
             <br>
             <button type="submit">Add Workout</button>
-        </form>
+        </form> 
         
         <h2>Workout History</h2>
         <ul id="workout-list"></ul>
     </div>
+
+
+    <div id="summary" class="summary">
+        <p><strong>Total Workouts:</strong> <span id="total-workouts">0</span></p>
+        <p><strong>Total Duration:</strong> <span id="total-duration">0</span> mins</p>
+        <p><strong>Total Calories:</strong> <span id="total-calories">0</span> cal</p>
+    </div>
+      
+    <!--<div id="notification" class="hidden"></div>-->
 
     <script src="script.js"></script>
 

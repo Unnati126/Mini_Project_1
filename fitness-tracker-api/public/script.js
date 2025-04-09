@@ -55,6 +55,18 @@ async function fetchWorkouts() {
     const workoutList = document.getElementById("workout-list");
     workoutList.innerHTML = ""; // Clear existing list
 
+    let totalDuration = 0;
+    let totalCalories = 0;
+
+    workouts.forEach((workout) => {
+        totalDuration += Number(workout.duration);
+        totalCalories += Number(workout.caloriesBurned);
+    });
+
+document.getElementById("total-workouts").textContent = workouts.length;
+document.getElementById("total-duration").textContent = totalDuration;
+document.getElementById("total-calories").textContent = totalCalories;
+
     workouts.forEach((workout) => {
         const li = document.createElement("li");
         li.innerHTML = `
@@ -99,3 +111,46 @@ async function deleteWorkout(id) {
     await fetch(`${API_URL}/${id}`, { method: "DELETE" });
     fetchWorkouts(); // Refresh list
 }
+
+
+// Add listener
+document.getElementById("filter").addEventListener("input", async (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const response = await fetch(API_URL);
+    const workouts = await response.json();
+
+    const filtered = workouts.filter(workout =>
+        workout.exercise.toLowerCase().includes(searchTerm) ||
+        workout.date.includes(searchTerm)
+    );
+
+    renderWorkoutList(filtered);
+});
+
+// Refactor this out of fetchWorkouts()
+function renderWorkoutList(workouts) {
+    const workoutList = document.getElementById("workout-list");
+    workoutList.innerHTML = "";
+    workouts.forEach((workout) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span><strong>${workout.exercise}</strong> - ${workout.duration} min - ${workout.caloriesBurned} cal - ${workout.date}</span>
+            <button class="edit-btn" onclick="editWorkout(${workout.id})">Edit</button>
+            <button class="delete-btn" onclick="deleteWorkout(${workout.id})">Delete</button>
+        `;
+        workoutList.appendChild(li);
+    });
+}
+
+/*function showNotification(message) {
+    const notify = document.getElementById("notification");
+    notify.textContent = message;
+    notify.classList.remove("hidden");
+
+    setTimeout(() => {
+        notify.classList.add("hidden");
+    }, 2000);
+}
+
+// Use it like this:
+showNotification("Workout added successfully!");*/

@@ -1,29 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Tracker API</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Inspiration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .quote {
+      font-style: italic;
+      margin: center;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    .info {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <!--<div class="container">
-        <h1>Fitness Tracker</h1>
 
-        <form id="workout-form">
-            <input type="text" id="exercise" placeholder="Exercise Name" required>
-            <input type="number" id="duration" placeholder="Duration (min)" required>
-            <input type="number" id="calories" placeholder="Calories Burned" required>
-            <input type="date" id="date" required>
-            <br>
-            <button type="submit">Add Workout</button>
-        </form>-->
+  <header>
+    <h1>Stay Fit. Stay Strong.</h1>
+    <p>Inspiration, information, and motivation — all in one place.</p>
+  </header>
 
+  <section class="gallery">
+    <img src="assets/fitness_1.jpeg" alt="Workout 1">
+    <img src="assets/fitness_2.jpeg" alt="Workout 2">
+    <img src="assets/fitness_3.jpeg" alt="Workout 3">
+  </section>
 
-        <h2>Workout History</h2>
-        <ul id="workout-list"></ul>
-    </div>
+  <section class="quote">
+    “It’s not about having time. It’s about making time.”
+  </section>
 
-    <script src="script.js"></script>
-    </body>
+  <section class="info">
+    <h2>Why Fitness Matters?</h2>
+    <p>Regular physical activity boosts your mood, strengthens your body, and increases your lifespan. Whether it's a 20-minute walk, a gym session, or yoga at home — moving your body matters.</p>
+
+    <h3>Tips for Staying Consistent:</h3>
+    <ul>
+        <li>📈 Track your progress with fitness tracker.</li>
+        <li>🗓️ Schedule your workouts like meetings.</li>
+        <li>🎯 Set realistic and achievable goals.</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Fitness Tracker Project. All rights reserved.
+  </footer>
+
+</body>
 </html>

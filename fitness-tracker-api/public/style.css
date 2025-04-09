@@ -62,3 +62,45 @@ li {
     background: blue;
     margin-left: 60%;
 }
+
+.summary {
+    background: #f2f2f2;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+body {
+    background: url('assets/background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.95; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+ 
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* white with slight transparency */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 60px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+  
+/*#notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}*/
