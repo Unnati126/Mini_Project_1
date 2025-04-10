@@ -17,7 +17,6 @@
             <input type="number" id="duration" placeholder="Duration (min)"required>
             <input type="number" id="calories" placeholder="Calories Burned" required>
             <input type="date" id="date" required>
-            <input type="text" id="filter" placeholder="Search by exercise or date..." />
             <br>
             <button type="submit">Add Workout</button>
         </form> 
@@ -33,14 +32,17 @@
             <input type="number" id="update-duration" placeholder="Duration (min)" required />
             <input type="number" id="update-calories" placeholder="Calories Burned" required />
             <input type="date" id="update-date" required />
+            <!--<input type="text" id="filter" placeholder="Search by exercise or date..." />-->
             <br>
             <button type="submit">Update Workout</button>
           </form>
           
-          <p><strong>Total Workouts:</strong> <span id="total-workouts">0</span></p>
-          <p><strong>Total Duration:</strong> <span id="total-duration">0</span> mins</p>
-          <p><strong>Total Calories:</strong> <span id="total-calories">0</span> cal</p>
-
+        <!-- Add this inside your HTML above the workout list -->
+        <div id="summary" class="summary">
+            <p><strong>Total Workouts:</strong> <span id="total-workouts">0</span></p>
+            <p><strong>Total Duration:</strong> <span id="total-duration">0</span> mins</p>
+            <p><strong>Total Calories:</strong> <span id="total-calories">0</span> cal</p>
+        </div>
     </div>
 
 <script src="script.js"></script>

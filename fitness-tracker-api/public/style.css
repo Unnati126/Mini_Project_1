@@ -32,7 +32,12 @@ button {
 }
 
 button:hover {
-    background: #218838;
+    background-color: #218838;
+}
+
+.update-btn:hover,
+.delete-btn:hover {
+  background-color: #00cc66; /* Green on hover */
 }
 
 ul {
@@ -49,9 +54,17 @@ li {
     justify-content: space-between;
 }
 
-.delete-btn {
+.summary {
+    background: #f2f2f2;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+
+/*.delete-btn {
     cursor: pointer;
-    background: red;
+    background-color: red;
     color: white;
     padding: 10px;
     border: none;
@@ -60,13 +73,12 @@ li {
 
 .edit-btn {
     cursor: pointer;
-    background: blue;
+    background-color: blue;
     color: white;
     padding: 10px;
     border: none;
-    margin-left: 60%;
-    
-}
+    margin-left: 100%;
+}*/
 
 #update-form {
     background-color: #f0f0f0;
@@ -74,3 +86,12 @@ li {
     margin-top: 20px;
     border-radius: 8px;
 }
+
+/*.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-weight: bold;
+    color: white;
+}*/
