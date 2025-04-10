@@ -79,7 +79,24 @@ document.getElementById("total-calories").textContent = totalCalories;
 }
 
 // Update an existing workout (PUT request)
+
 async function updateWorkout(id) {
+    const response = await fetch(`${API_URL}/${id}`);
+    const workout = await response.json();
+  
+    // Fill update form with workout data
+    document.getElementById("update-id").value = workout.id;
+    document.getElementById("update-exercise").value = workout.exercise;
+    document.getElementById("update-duration").value = workout.duration;
+    document.getElementById("update-calories").value = workout.caloriesBurned;
+    document.getElementById("update-date").value = workout.date;
+  
+    // Show the update form
+    document.getElementById("update-form").style.display = "block";
+  }
+  
+
+/*async function updateWorkout(id) {
     const response = await fetch(`${API_URL}/${id}`);
     const workout = await response.json();
 
@@ -104,13 +121,39 @@ async function updateWorkout(id) {
 
         fetchWorkouts(); // Refresh list
     }
-}
+}*/
 
 // DELETE a workout (DELETE request)
 async function deleteWorkout(id) {
     await fetch(`${API_URL}/${id}`, { method: "DELETE" });
     fetchWorkouts(); // Refresh list
 }
+
+// to update a workout
+const updateForm = document.getElementById("update-form");
+
+updateForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const id = document.getElementById("update-id").value;
+  const exercise = document.getElementById("update-exercise").value;
+  const duration = document.getElementById("update-duration").value;
+  const caloriesBurned = document.getElementById("update-calories").value;
+  const date = document.getElementById("update-date").value;
+
+  const updatedWorkout = { exercise, duration, caloriesBurned, date };
+
+  await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedWorkout),
+  });
+
+  fetchWorkouts();
+  updateForm.reset();
+  updateForm.style.display = "none";
+});
+
 
 
 // Add listener
