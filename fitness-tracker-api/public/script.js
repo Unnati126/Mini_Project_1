@@ -104,32 +104,3 @@ async function deleteWorkout(id) {
     await fetch(`${API_URL}/${id}`, { method: "DELETE" });
     fetchWorkouts();
 }
-
-/*// Add listener
-document.getElementById("filter").addEventListener("input", async (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    const response = await fetch(API_URL);
-    const workouts = await response.json();
-
-    const filtered = workouts.filter(workout =>
-        workout.exercise.toLowerCase().includes(searchTerm) ||
-        workout.date.includes(searchTerm)
-    );
-
-    renderWorkoutList(filtered);
-});
-
-// Refactor this out of fetchWorkouts()
-function renderWorkoutList(workouts) {
-    const workoutList = document.getElementById("workout-list");
-    workoutList.innerHTML = "";
-    workouts.forEach((workout) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-            <span><strong>${workout.exercise}</strong> - ${workout.duration} min - ${workout.caloriesBurned} cal - ${workout.date}</span>
-            <button class="update-btn" onclick="updateWorkout(${workout.id})">Update</button>
-            <button class="delete-btn" onclick="deleteWorkout(${workout.id})">Delete</button>
-        `;
-        workoutList.appendChild(li);
-    });
-}*/

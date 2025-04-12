@@ -1,27 +1,9 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import { readWorkouts } from "../service/workouts.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const dataFilePath = path.join(__dirname, "../data/workouts.json");
+export const getWorkouts = () => {
+    return readWorkouts();
+  };
 
-// Helpers
-const readWorkouts = () => {
-  if (!fs.existsSync(dataFilePath)) return [];
-  const data = fs.readFileSync(dataFilePath, "utf-8");
-  return JSON.parse(data);
-};
-
-const writeWorkouts = (workouts) => {
-  fs.writeFileSync(dataFilePath, JSON.stringify(workouts, null, 2));
-};
-
-// Controller: Get all
-export const getWorkouts = (req, res) => {
-  const workouts = readWorkouts();
-  res.json(workouts);
-};
 
 // Controller: Get by ID
 export const getWorkoutById = (req, res) => {

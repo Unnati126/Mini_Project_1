@@ -10,6 +10,12 @@ import {
 const router = express.Router();
 
 // GET all workouts
+/*router.get("/", (_req, res) => {
+  const workouts = getWorkouts();
+  res.send(workouts); // Send the workouts as a response
+});*/
+
+
 router.get("/", getWorkouts);
 
 // GET a single workout by ID

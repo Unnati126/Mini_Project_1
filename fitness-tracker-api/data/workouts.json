@@ -1,9 +1,37 @@
 [
   {
-    "id": 1744284531305,
+    "id": 1744416919027,
     "exercise": "Running",
-    "duration": "30",
+    "duration": "25",
     "caloriesBurned": "250",
-    "date": "2025-04-08"
+    "date": "2025-04-11"
+  },
+  {
+    "id": 1744417169399,
+    "exercise": "Skipping",
+    "duration": "15",
+    "caloriesBurned": "180",
+    "date": "2025-04-10"
+  },
+  {
+    "id": 1744466177646,
+    "exercise": "Running",
+    "duration": "20",
+    "caloriesBurned": "180",
+    "date": "2025-04-10"
+  },
+  {
+    "id": 1744498160327,
+    "exercise": "Pilates",
+    "duration": "3",
+    "caloriesBurned": "100",
+    "date": "2025-04-11"
+  },
+  {
+    "id": 1744498466073,
+    "exercise": "Jumping Jacks",
+    "duration": "5",
+    "caloriesBurned": "180",
+    "date": "2025-04-10"
   }
 ]
