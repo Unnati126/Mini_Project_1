@@ -1,4 +1,4 @@
-import { readWorkouts } from "../service/workouts.js";
+import { readWorkouts , writeWorkouts } from "../service/workouts.js";
 
 export const getWorkouts = () => {
     return readWorkouts();

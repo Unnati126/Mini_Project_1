@@ -33,5 +33,19 @@
     "duration": "5",
     "caloriesBurned": "180",
     "date": "2025-04-10"
+  },
+  {
+    "id": 1744500194115,
+    "exercise": "Jumping Jacks",
+    "duration": "10",
+    "caloriesBurned": "150",
+    "date": "2025-04-11"
+  },
+  {
+    "id": 1744500404641,
+    "exercise": "Cycling",
+    "duration": "30",
+    "caloriesBurned": "200",
+    "date": "2025-04-12"
   }
 ]
