@@ -59,14 +59,12 @@ async function fetchWorkouts() {
     const workoutList = document.getElementById("workout-list");
     workoutList.innerHTML = "";
 
-    // Inside fetchWorkouts() — after `workoutList.innerHTML = "";`
-let totalDuration = 0;
-let totalCalories = 0;
+    let totalDuration = 0;
+    let totalCalories = 0;
 
 workouts.forEach((workout) => {
     totalDuration += Number(workout.duration);
     totalCalories += Number(workout.caloriesBurned);
-    // existing workout rendering logic...
 });
 
 document.getElementById("total-workouts").textContent = workouts.length;
@@ -78,8 +76,8 @@ document.getElementById("total-calories").textContent = totalCalories;
         const li = document.createElement("li");
         li.innerHTML = ` 
             <span><strong>${workout.exercise}</strong>- ${workout.duration} min - ${workout.caloriesBurned} cal - ${workout.date}</span>
-            <span><button onclick="updateWorkout(${workout.id})">Update</button>
-            <button onclick="deleteWorkout(${workout.id})">Delete</button></span>
+            <span><button class="update-btn" onclick="updateWorkout(${workout.id})">Update</button>
+            <button class="delete-btn" onclick="deleteWorkout(${workout.id})">Delete</button></span>
         `;
         workoutList.appendChild(li);
     });

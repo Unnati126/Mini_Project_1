@@ -35,6 +35,32 @@ button:hover {
     background: #218838;
 }
 
+/* Update button (Workout History) */
+.update-btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+  
+/* Delete button (Workout History) */
+.delete-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+  
+/* Hover effect ONLY for update and delete buttons */
+.update-btn:hover,
+.delete-btn:hover {
+    background-color: green;
+}
+  
 ul {
     list-style: none;
     padding: 0;
@@ -47,36 +73,6 @@ li {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-}
-
-.summary {
-    background: #f2f2f2;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-  
-  .workout-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.delete-btn {
-    cursor: pointer;
-    background: red;
-    color: white;
-    padding: 5px;
-    border: none;
-    margin-left: 10px;
-}
-
-.update-btn {
-    background: blue;
-    cursor: pointer;
-    color: white;
-    padding: 5px;
-    border: none;
-    margin-left: 10px;  
 }
 
 #update-form {

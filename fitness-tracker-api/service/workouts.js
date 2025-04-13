@@ -14,7 +14,7 @@ export const readWorkouts = () => {
     return JSON.parse(data);
   };
   
-  // Helper: Write workouts
-  export const writeWorkouts = (workouts) => {
+// Helper: Write workouts
+export const writeWorkouts = (workouts) => {
     fs.writeFileSync(dataFilePath, JSON.stringify(workouts, null, 2));
-  };
+};

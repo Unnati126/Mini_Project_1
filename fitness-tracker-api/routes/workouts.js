@@ -15,9 +15,6 @@ router.get("/", (_req, res) => {
   res.send(workouts); // Send the workouts as a response
 });
 
-
-//router.get("/", getWorkouts);
-
 // GET a single workout by ID
 router.get("/:id", getWorkoutById);
 
