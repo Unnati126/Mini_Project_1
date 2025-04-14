@@ -12,5 +12,5 @@ app.use('/', express.static('public'));
 app.use("/api/workouts", workoutRoutes);
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}/index.html`);
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
