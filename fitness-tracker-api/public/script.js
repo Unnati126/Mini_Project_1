@@ -62,27 +62,32 @@ async function fetchWorkouts() {
     let totalDuration = 0;
     let totalCalories = 0;
 
-workouts.forEach((workout) => {
-    totalDuration += Number(workout.duration);
-    totalCalories += Number(workout.caloriesBurned);
-});
+    workouts.forEach((workout) => {
+        totalDuration += Number(workout.duration);
+        totalCalories += Number(workout.caloriesBurned);
+    });
 
-document.getElementById("total-workouts").textContent = workouts.length;
-document.getElementById("total-duration").textContent = totalDuration;
-document.getElementById("total-calories").textContent = totalCalories;
-
+    document.getElementById("total-workouts").textContent = workouts.length;
+    document.getElementById("total-duration").textContent = totalDuration;
+    document.getElementById("total-calories").textContent = totalCalories;
 
     workouts.forEach((workout) => {
+        // Convert date to dd/mm/yyyy format
+        const dateObj = new Date(workout.date);
+        const formattedDate = `${String(dateObj.getDate()).padStart(2, '0')}/${String(dateObj.getMonth() + 1).padStart(2, '0')}/${dateObj.getFullYear()}`;
+    
         const li = document.createElement("li");
-        li.innerHTML = ` 
-            <span><strong>${workout.exercise}</strong>- ${workout.duration} min - ${workout.caloriesBurned} cal - ${workout.date}</span>
-            <span><button class="update-btn" onclick="updateWorkout(${workout.id})">Update</button>
-            <button class="delete-btn" onclick="deleteWorkout(${workout.id})">Delete</button></span>
+        li.innerHTML = `
+            <span><strong>${workout.exercise}</strong> - ${workout.duration} min - ${workout.caloriesBurned} cal - ${formattedDate}</span>
+            <span>
+                <button class="update-btn" onclick="updateWorkout(${workout.id})">Update</button>
+                <button class="delete-btn" onclick="deleteWorkout(${workout.id})">Delete</button>
+            </span>
         `;
         workoutList.appendChild(li);
     });
 }
-
+   
 // Start editing
 async function updateWorkout(id) {
     const response = await fetch(`${API_URL}/${id}`);
